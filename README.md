@@ -1,6 +1,6 @@
-## Q learning
+## T3D - Twin Delayed Deep Detereministic Policy Gradient
 
-- Youtube video : https://youtu.be/STdYD7631tg
+- Youtube video : https://youtu.be/Tzt4X89dWiA
 
 #### Program Files
 
@@ -8,9 +8,9 @@
     - map.py -> Main file from which ai.py is called and rewards/penalties are awarded
     - car.kv -> Kivy file for setting up car
     - images -> This has the images
-        - seattlemap.png -> This is the map which is shown in display
-        - seattlemask.png -> This is the black and white map with black areas as lanes
-        - seattlemask2.png -> Opengl needs different coordinates. This is the same seattlemask.png transformed by rotating to the right by 90 degrees
+        - citymap.png -> This is the map which is shown in display
+        - MASK1.png -> This is the black and white map with black areas as lanes
+        - mask.png -> Opengl needs different coordinates. This is the same MASK1.png transformed by rotating to the right by 90 degrees
 
 #### How to run
 
@@ -22,13 +22,15 @@
 
 #### Description
 
-    - Here our RL agent (car) learns to navigate from point to point using Q Learning - a reinforcement learning technique.
-    - Q learning here uses a fully connected deep learning network.
-    - Deep learning network predicts Q states based on which 3 actions are taken by the agent : move forward, turn left or turn right .
+    - Here our RL agent (car) learns to navigate from point to point using T3D (Twin Delayed Deep Detereministic Policy Gradient) - a reinforcement learning technique.
+    - T3D here uses actor-critic models built on fully connected deep learning network.
+    - There are 2 actors - an actor model & actor target
+    - There are 4 critics - 2 critic models & 2 critic targets
+    - Actor network predicts Q states based on which 3 actions are taken by the agent : move forward, turn left or turn right.
     - Car here navigates from 3 points.
-    - Point A is on top left intersection with coordinates (346, 737).
-    - Once it reaches A it moves to B which is on top right (1330, 727).
-    - Once that is achieved, it moves back to B. After conquering that too it will then proceed to point C which on bottom left (70, 70).
+    - Point A is on top left intersection with coordinates (500, 610).
+    - Once it reaches A it moves to B which is on top right (1420, 622).
+    - Once that is achieved, it moves back to B. After conquering that too it will then proceed to point C which on bottom left (160, 120).
     - This loop will continue and car will keep hopping from one point to another.
     - During its travel car is guided by living penalties and rewards.
     - Penalties are punishments given to car for an undesired motion.

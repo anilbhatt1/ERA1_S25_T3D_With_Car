@@ -4,13 +4,14 @@
 
 #### Program Files
 
-    - ai.py -> This has the deep learning network
+    - ai.py -> This has the deep learning network (T3D, actor & critic)
     - map.py -> Main file from which ai.py is called and rewards/penalties are awarded
     - car.kv -> Kivy file for setting up car
     - images -> This has the images
         - citymap.png -> This is the map which is shown in display
         - MASK1.png -> This is the black and white map with black areas as lanes
         - mask.png -> Opengl needs different coordinates. This is the same MASK1.png transformed by rotating to the right by 90 degrees
+    - ERA1_s25_tdddpg_v0.ipynb -> This is a reference colab file that is helpful to understand how T3D works using "AntBulletEnv-v0" environment in gym==0.22 & pybullet
 
 #### How to run
 
